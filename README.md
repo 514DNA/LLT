@@ -2,7 +2,7 @@
 
 ## **Code will be released soon.** 
 
-This repository represents the official implementation of the ECCV'2022 paper: **"Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear Transformation"** by Ziming Wang*, Xiaoliang Huo*, Zhenghao Chen, Jing Zhang, Lu Sheng† and Dong Xu (*equal contributions, †corresponding author)
+This repository represents the official implementation of the ECCV'2022 paper: **["Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear Transformation"](http://arxiv.org/abs/2208.14893)** by Ziming Wang*, Xiaoliang Huo*, Zhenghao Chen, Jing Zhang, Lu Sheng† and Dong Xu (*equal contributions, †corresponding author)
 
 <!--
 This paper focus on RGB-D based feature extraction for 3D point clouds registration. If you find this project useful, please cite:
@@ -47,76 +47,80 @@ We train our module under two different setups:
 
 The overall results are shown in the chart below:
 
-<table>
-    <tr>
-        <td rowspan="3",div align="center">Train Set</td>
-        <td colspan="5",div align="center">Rotation</td>   
-        <td colspan="5",div align="center">Translation</td> 
-        <td colspan="5",div align="center">Chamfer Distance</td> 
-    </tr>
-    <tr>
-        <td colspan="3",div align="center">accuracy</td>   
-        <td colspan="2",div align="center">error</td>   
-        <td colspan="3",div align="center">accuracy</td>   
-        <td colspan="2",div align="center">error</td>   
-        <td colspan="3",div align="center">accuracy</td>   
-        <td colspan="2",div align="center">error</td>   
-    </tr>
-    <tr>
-        <td div align="center">5°</td> 
-        <td div align="center">10°</td> 
-        <td div align="center">45°</td> 
-        <td div align="center">Mean</td> 
-        <td div align="center">Med.</td> 
-        <td div align="center">5cm</td> 
-        <td div align="center">10cm</td> 
-        <td div align="center">25cm</td> 
-        <td div align="center">Mean</td> 
-        <td div align="center">Med.</td> 
-        <td div align="center">1mm</td> 
-        <td div align="center">5mm</td> 
-        <td div align="center">10mm</td> 
-        <td div align="center">Mean</td> 
-        <td div align="center">Med.</td> 
-    </tr>
-    <tr>
-        <td div align="center">3D Match</td>
-        <td div align="center">93.4</td> 
-        <td div align="center">96.5</td> 
-        <td div align="center">98.8</td> 
-        <td div align="center">3.0</td> 
-        <td div align="center">0.9</td> 
-        <td div align="center">76.9</td> 
-        <td div align="center">90.2</td> 
-        <td div align="center">96.7</td> 
-        <td div align="center">6.4</td> 
-        <td div align="center">2.4</td> 
-        <td div align="center">86.4</td> 
-        <td div align="center">95.1</td> 
-        <td div align="center">96.8</td> 
-        <td div align="center">5.3</td> 
-        <td div align="center">0.1</td> 
-    </tr>  
-    <tr>
-        <td div align="center">ScanNet</td>
-        <td div align="center">95.5</td> 
-        <td div align="center">97.6</td> 
-        <td div align="center">99.1</td> 
-        <td div align="center">2.5</td> 
-        <td div align="center">0.8</td> 
-        <td div align="center">80.4</td> 
-        <td div align="center">92.2</td> 
-        <td div align="center">97.6</td> 
-        <td div align="center">5.5</td> 
-        <td div align="center">2.2</td> 
-        <td div align="center">88.9</td> 
-        <td div align="center">96.4</td> 
-        <td div align="center">97.6</td> 
-        <td div align="center">4.6</td> 
-        <td div align="center">0.1</td> 
-    </tr>  
-</table>
+<div align=center>
+    <table>
+        <tr>
+            <td rowspan="3",div align="center">Train Set</td>
+            <td colspan="5",div align="center">Rotation</td>   
+            <td colspan="5",div align="center">Translation</td> 
+            <td colspan="5",div align="center">Chamfer Distance</td> 
+        </tr>
+        <tr>
+            <td colspan="3",div align="center">accuracy</td>   
+            <td colspan="2",div align="center">error</td>   
+            <td colspan="3",div align="center">accuracy</td>   
+            <td colspan="2",div align="center">error</td>   
+            <td colspan="3",div align="center">accuracy</td>   
+            <td colspan="2",div align="center">error</td>   
+        </tr>
+        <tr>
+            <td div align="center">5°</td> 
+            <td div align="center">10°</td> 
+            <td div align="center">45°</td> 
+            <td div align="center">Mean</td> 
+            <td div align="center">Med.</td> 
+            <td div align="center">5cm</td> 
+            <td div align="center">10cm</td> 
+            <td div align="center">25cm</td> 
+            <td div align="center">Mean</td> 
+            <td div align="center">Med.</td> 
+            <td div align="center">1mm</td> 
+            <td div align="center">5mm</td> 
+            <td div align="center">10mm</td> 
+            <td div align="center">Mean</td> 
+            <td div align="center">Med.</td> 
+        </tr>
+        <tr>
+            <td div align="center">3D Match</td>
+            <td div align="center">93.4</td> 
+            <td div align="center">96.5</td> 
+            <td div align="center">98.8</td> 
+            <td div align="center">3.0</td> 
+            <td div align="center">0.9</td> 
+            <td div align="center">76.9</td> 
+            <td div align="center">90.2</td> 
+            <td div align="center">96.7</td> 
+            <td div align="center">6.4</td> 
+            <td div align="center">2.4</td> 
+            <td div align="center">86.4</td> 
+            <td div align="center">95.1</td> 
+            <td div align="center">96.8</td> 
+            <td div align="center">5.3</td> 
+            <td div align="center">0.1</td> 
+        </tr>  
+        <tr>
+            <td div align="center">ScanNet</td>
+            <td div align="center">95.5</td> 
+            <td div align="center">97.6</td> 
+            <td div align="center">99.1</td> 
+            <td div align="center">2.5</td> 
+            <td div align="center">0.8</td> 
+            <td div align="center">80.4</td> 
+            <td div align="center">92.2</td> 
+            <td div align="center">97.6</td> 
+            <td div align="center">5.5</td> 
+            <td div align="center">2.2</td> 
+            <td div align="center">88.9</td> 
+            <td div align="center">96.4</td> 
+            <td div align="center">97.6</td> 
+            <td div align="center">4.6</td> 
+            <td div align="center">0.1</td> 
+        </tr>  
+    </table>
+</div>
 
 Here are several visualization examples of our method comparing to our baseline and Ground Truth:
 
-![visualization](assest/demonstration.gif)
+<div align=center>
+    <img src="assest/demonstration.gif">
+</div>
