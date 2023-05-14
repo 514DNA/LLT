@@ -20,25 +20,6 @@ In this work, we propose a new Geometry-Aware Visual Feature Extractor (GAVE) th
 
 ![pipeline](assest/pipeline.png)
 
-<!-- 
-## Instructions
-
-This code has been trained/tested on
-
-- Python 3.6.13, PyTorch 1.7.1, CUDA 11.0.3, gcc 9.3.0, Tesla V100-PCIE-32GB
-
-
-
-### Installation 
-
-To use our code, first download the repository:
-
-````
-git clone git@github.com:514DNA/LLT.git
-````
-
--->
-
 ## Main Results
 
 We train our module under two different setups: 
@@ -53,7 +34,8 @@ The overall results are shown in the chart below:
             <td rowspan="3",div align="center">Train Set</td>
             <td colspan="5",div align="center">Rotation</td>   
             <td colspan="5",div align="center">Translation</td> 
-            <td colspan="5",div align="center">Chamfer Distance</td> 
+            <td colspan="5",div align="center">Chamfer Distance</td>
+            <td rowspan="3",div align="center">Ckpts</td>
         </tr>
         <tr>
             <td colspan="3",div align="center">accuracy</td>   
@@ -97,6 +79,7 @@ The overall results are shown in the chart below:
             <td div align="center">96.8</td> 
             <td div align="center">5.3</td> 
             <td div align="center">0.1</td> 
+            <td dic align="center"><a href="https://github.com/514DNA/LLT/pretrained_weights/GAVE_3dmatch.pkl">ckpt</td>
         </tr>  
         <tr>
             <td div align="center">ScanNet</td>
@@ -115,6 +98,7 @@ The overall results are shown in the chart below:
             <td div align="center">97.6</td> 
             <td div align="center">4.6</td> 
             <td div align="center">0.1</td> 
+            <td dic align="center"><a href="https://github.com/514DNA/LLT/pretrained_weights/GAVE_scannet.pkl">ckpt</td>
         </tr>  
     </table>
 </div>
@@ -124,3 +108,78 @@ Here are several visualization examples of our method comparing to our baseline 
 <div align=center>
     <img src="assest/demonstration.gif">
 </div>
+
+This code has been trained/tested on:
+
+- Python 3.6.13, PyTorch 1.7.1, CUDA 11.0.3, gcc 9.3.0, Tesla V100-PCIE-32GB
+
+## Environment Setup
+
+```
+# create a conda environment and activate it
+conda create --name GAVE python=3.10
+conda activate GAVE
+
+# install pytorch (any version that match your CUDA version)
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+conda install matplotlib tensorboard
+
+# install pytorch3d
+conda install pytorch3d -c pytorch3d
+
+# install open3d
+pip -m pip install open3d
+
+# install Minkowski Engine 
+git clone https://github.com/NVIDIA/MinkowskiEngine
+cd MinkowskiEngine
+python setup.py install --blas=openblas --blas_include_dirs=${CONDA_PREFIX}/include
+
+# install other dependencies
+python -m pip install nibabel opencv-python easydict pre-commit
+```
+If any error happens when installing the Minkowski Engine, please follow the [official instruction](https://github.com/NVIDIA/MinkowskiEngine#Installation).
+
+## Datasets Setup
+
+Following the UnsupervisedR&R, we ues two datasets for training in our work: 3DMatch and ScanNet, and evaluate only in ScanNet test set.
+
+For the download and pre-processing procedure, please refer to [UR&R's 
+instruction](https://github.com/mbanani/unsupervisedRR/blob/main/docs/datasets.md)
+
+After downloading the datasets, make sure to update the paths in `GAVE/datasets/builder.py` with the dataaset root directories.
+
+## Get Started
+
+### Training
+You can modify the settings of models in `GAVE/configs/config.py` and appoint the GPU in `train.py`:
+```
+# Training on 3DMatch dataset
+python -u train.py --mode train --config_path 3DMatch.yaml
+# Training on ScanNet dataset
+python -u train.py --mode train --config_path ScanNet.yaml
+```
+
+### Inference
+You can evaulate checkpoints using the following command:
+```
+python -u evaluate.py mine --checkpoint ckpt_path/ckpt_name.pkl --progress_bar --boost_alignment
+```
+
+## Acknowledgments
+
+This repo heavily benefits from the [UnsupervisedR&R](https://github.com/mbanani/unsupervisedRR). We would like to thank Mohamed El for his excellent work.
+
+
+## Citation
+
+```
+@inproceedings{wang2022improving,
+  title={Improving rgb-d point cloud registration by learning multi-scale local linear transformation},
+  author={Wang, Ziming and Huo, Xiaoliang and Chen, Zhenghao and Zhang, Jing and Sheng, Lu and Xu, Dong},
+  booktitle={Computer Vision--ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23--27, 2022, Proceedings, Part XXXII},
+  pages={175--191},
+  year={2022},
+  organization={Springer}
+}
+```
