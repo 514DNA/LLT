@@ -1,0 +1,10 @@
+# Just a simple config file for testing
+MODEL:
+    name: "PCReg"
+TRAIN:
+    num_epochs: 14
+DATASET:
+    name: "RGBD_3DMatch"
+EXPERIMENT:
+    name: "3DMatch"
+    #checkpoint: "logs/experiments/Debug\ Config_0128-0812/checkpoint@e0008s0155000.pkl"

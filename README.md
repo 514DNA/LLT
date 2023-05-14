@@ -145,7 +145,7 @@ If any error happens when installing the Minkowski Engine, please follow the [of
 Following the UnsupervisedR&R, we ues two datasets for training in our work: 3DMatch and ScanNet, and evaluate only in ScanNet test set.
 
 For the download and pre-processing procedure, please refer to [UR&R's 
-instruction](https://github.com/mbanani/unsupervisedRR/blob/main/docs/datasets.md)
+instruction](https://github.com/mbanani/unsupervisedRR/blob/main/docs/datasets.md).
 
 After downloading the datasets, make sure to update the paths in `GAVE/datasets/builder.py` with the dataaset root directories.
 
