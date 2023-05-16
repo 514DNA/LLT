@@ -79,7 +79,7 @@ The overall results are shown in the chart below:
             <td div align="center">96.8</td> 
             <td div align="center">5.3</td> 
             <td div align="center">0.1</td> 
-            <td dic align="center"><a href="https://github.com/514DNA/LLT/pretrained_weights/GAVE_3dmatch.pkl">ckpt</td>
+            <td dic align="center"><a href="https://github.com/514DNA/LLT/blob/main/pretrained_weights/GAVE_3dmatch.pkl">ckpt</td>
         </tr>  
         <tr>
             <td div align="center">ScanNet</td>
@@ -98,7 +98,7 @@ The overall results are shown in the chart below:
             <td div align="center">97.6</td> 
             <td div align="center">4.6</td> 
             <td div align="center">0.1</td> 
-            <td dic align="center"><a href="https://github.com/514DNA/LLT/pretrained_weights/GAVE_scannet.pkl">ckpt</td>
+            <td dic align="center"><a href="https://github.com/514DNA/LLT/blob/main/pretrained_weights/GAVE_scannet.pkl">ckpt</td>
         </tr>  
     </table>
 </div>
