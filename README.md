@@ -1,7 +1,5 @@
 # Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear Transformation
 
-## **Code will be released soon.** 
-
 This repository represents the official implementation of the ECCV'2022 paper: **["Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear Transformation"](http://arxiv.org/abs/2208.14893)** by Ziming Wang*, Xiaoliang Huo*, Zhenghao Chen, Jing Zhang, Lu Sheng† and Dong Xu (*equal contributions, †corresponding author)
 
 <!--
@@ -26,7 +24,7 @@ We train our module under two different setups:
 - Training on the 3D Match dataset for 14 epochs, and testing on the ScanNet test set.
 - Training on the ScanNet dataset for 1 epoch, and testing on the ScanNet test set.
 
-The overall results are shown in the chart below:
+The overall results are shown in the chart below along with the checkpoints' download links:
 
 <div align=center>
     <table>
